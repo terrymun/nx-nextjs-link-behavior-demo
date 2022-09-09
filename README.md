@@ -16,6 +16,8 @@ The rendered output of this following template:
 
 ## Rendered output via Jest (incorrect)
 
+This can be verified by checking the inline snapshot generated on `index.spec.tsx`:
+
 ```tsx
 <strong
   data-testid="content"
@@ -25,6 +27,8 @@ The rendered output of this following template:
 ```
 
 ## Actual rendered output on `yarn start` (correct)
+
+This can be verified by running `yarn start` and checking the markup of the served page:
 
 ```tsx
 <a href="https://example.com">
