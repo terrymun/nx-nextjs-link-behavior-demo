@@ -13,3 +13,25 @@ The rendered output of this following template:
 ```
 
 ...is different when checking on Jest vs when serving the site via `yarn start`.
+
+## Rendered output via Jest (incorrect)
+
+```tsx
+<strong
+  data-testid="content"
+>
+  Link element with new behavior
+</strong>
+```
+
+## Actual rendered output on `yarn start` (correct)
+
+```tsx
+<a href="https://example.com">
+  <strong
+    data-testid="content"
+  >
+    Link element with new behavior
+  </strong>
+</a>
+```
