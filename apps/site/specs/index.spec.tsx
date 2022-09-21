@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-
+import nextJest from 'next/jest';
 import Link from "next/link";
 
 describe("Index", () => {
@@ -14,6 +14,7 @@ describe("Index", () => {
       <div>
         <a
           href="https://example.com"
+          data-testid="link"
         >
           Link element with new behavior
         </a>
@@ -29,11 +30,16 @@ describe("Index", () => {
     );
     expect(container).toMatchInlineSnapshot(`
       <div>
-        <strong
-          data-testid="content"
+        <a 
+          href="https://example.com"
+          data-testid="link"
         >
-          Link element with new behavior
-        </strong>
+          <strong
+            data-testid="content"
+          >
+            Link element with new behavior
+          </strong>
+        </a>
       </div>
     `);
   });
